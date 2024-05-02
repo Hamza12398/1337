@@ -56,25 +56,25 @@ void ft_putchar(char c) {
 
 void ft_print_comb2() {
   int a;
-  int b;
+  int x;
 
   a = '0';
   while (a <= 98)
   {
-    b = a + 1;
-    while (b <= 99)
+    x = a + 1;
+    while (x <= 99)
     {
       ft_putchar('0' + a / 10);
       ft_putchar('0' + a % 10);
       // ft_putchar(38);
       ft_putchar('  ');
-      ft_putchar('0' + b / 10);
-      ft_putchar('0' + b % 10);
+      ft_putchar('0' + x / 10);
+      ft_putchar('0' + x % 10);
       if (a != 98)
       {
         write(1 , ", ", 2); 
       }
-      b++;
+      x++;
     }
     a++;
   } 
