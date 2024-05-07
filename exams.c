@@ -68,9 +68,105 @@
 
   // ! ft_strcmp.c
 
-  int    ft_strcmp(char *s1, char *s2){
-    int i = 0;
-    while (s1[i] == s2[i] && s1[i]!= '\0' && s2[i]!= '\0')
-      i++;
-    return (s1[i] - s2[i]);
-  }
+  // int    ft_strcmp(char *s1, char *s2){
+  //   int i = 0;
+  //   while (s1[i] == s2[i] && s1[i]!= '\0' && s2[i]!= '\0')
+  //     i++;
+  //   return (s1[i] - s2[i]);
+  // }
+
+
+
+  // int	main(int argc, char **argv) {
+  //   int i; 
+  //   i = 0;
+
+  //   if(argc == 2)  {
+  //     while (argv[1][i]) {
+  //         if (argv[1][i] == 'a')
+  //         {
+  //           write(1, "a", 1);
+  //           break;
+  //         }          
+  //       i++;
+  //     }
+  //   }
+  //   else 
+  //   write(1, "\n", 1);
+  // }
+
+// int main() {
+//   // char i = '9';
+//   int i = 9;
+
+//   while (i >= 0)
+//   {
+//     write(1, &i, 1);
+//     i--;
+//   }
+//   write(1, "\n", 1);
+//   return 0;
+// }
+
+// void	ft_print_numbers(void)
+// {
+// 	char	n;
+// 	n = '0';
+// 	while (n <= '9')
+// 	{
+// 		write(1, &n, 1);
+// 		n++;
+// 	}
+// 	write(1, "\n", 1);
+// }
+
+// int  main(void){
+//   ft_print_numbers();
+//   return (0);
+// }
+
+
+#include <unistd.h>
+
+// void	ft_putchar(char c)
+// {
+// 	write(1, &c, 1);
+// }
+
+// int	main(void)
+// {
+// 	int	i;
+
+// 	// i = 97;
+//   i = 'a';
+// 	while (i <= 'z') 
+// 	{
+// 		if (i % 2 != 0)
+// 			ft_putchar(i - 32);  
+// 		else
+// 			ft_putchar(i);
+// 		i++;
+// 	}
+// 	ft_putchar('\n');
+// 	return (0);
+// }
+
+
+// int	main(int argc, char **argv)
+// {
+// 	if (argc > 1)
+// 		while (*argv[])
+// 			write(1, argv[2]++, 1);
+// 	write(1, "\n", 1);
+// 	return (0);
+// }
+
+int main(int argc, char **argv) {
+    if (argc > 1) {
+        while (*argv[argc - 2]) {
+            write(1, argv[argc - 2]++, 1);
+        }
+    }
+    write(1, "\n", 1);
+    return 0;
+}
