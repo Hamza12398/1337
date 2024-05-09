@@ -1,9 +1,10 @@
 #include <unistd.h>
 #include <stdio.h>
 
-// void ft_putchar(char c) {
-//   write(1, &c, 1);
-// }
+void ft_putchar(char c) {
+  write(1, &c, 1);
+}
+
 
 
 // ! ft_countdown.c 
@@ -108,6 +109,8 @@
 //   return 0;
 // }
 
+
+// ! ft_print_numbers.c
 // void	ft_print_numbers(void)
 // {
 // 	char	n;
@@ -126,7 +129,6 @@
 // }
 
 
-#include <unistd.h>
 
 // void	ft_putchar(char c)
 // {
@@ -198,6 +200,7 @@
 // }
 
 
+// ! ft_swap.c
 // void	ft_swap(int *a, int *b){
 // 	int temp;
 //   temp = *a;
@@ -214,6 +217,8 @@
 //   return (0);
 // }
 
+
+// ! ft_strcmp.c
 // int		ft_strcmp(char *s1, char *s2)
 // {
 // 	int i;
@@ -233,6 +238,8 @@
 //   return 0;
 // }
 
+
+// ! ft_strcmp.c
 // int		ft_strcmp(char *s1, char *s2) {
 // 	int i = 0;
 
@@ -251,25 +258,131 @@
 // }
 
 
-#include <stdio.h>
+// ! occ_a.c
+// int count_letter_a( char* string) {
+//     int count = 0;
+//     int i = 0;
 
-int count_letter_a( char* string) {
-    int count = 0;
-    int i = 0;
+//     while (string[i]) {
+//         if (string[i] == 'a') {
+//             count++;
+//         }
+//         i++;
+//     }
+//     return count;
+// }
 
-    while (string[i]) {
-        if (string[i] == 'a') {
-            count++;
-        }
-        i++;
-    }
-    return count;
+// int main() {
+//   char input_string[] = "Abracadabra";
+//     int result = count_letter_a(input_string);
+//     printf("Count: %d\n", result); 
+
+//     return 0;
+// }
+
+
+// ! aff_a.c 
+
+// int	main(int argc, char **argv)
+// {
+//   int i = 0;
+
+//   if (argc == 2) 
+//     while (argv[1][i] != '\0') 
+//     {
+//       if (argv[1][i] == 'a')
+//       {
+//         ft_putchar('a');
+//         break;
+//       }
+//       i++;
+//     }
+//   else 
+//   {
+//     ft_putchar('a');
+//     ft_putchar('\n');
+//   }
+// }
+
+
+// ! maff_alpha.c
+
+// int main() {
+//   int i = 'a';
+
+//   while (i <= 'z')
+//   {
+//     if (i % 2 == 0) // even number
+//     if (i % 2 != 0) // odd number
+//     {
+//       ft_putchar(i - 32);
+//     }
+//     else 
+//     {
+//       ft_putchar(i);
+//     }
+//     i++;
+//   }
+// }
+
+// int main() {
+//   int i = '0';
+
+//   while (i <= '9')
+//   {
+//     if (i % 2 == 0)
+//     {
+//       ft_putchar(i);
+//     }
+//     i++;
+//   }
+// }
+
+
+// ! aff_first_param.c
+// int	main(int argc, char **argv)
+// {
+// 	if (argc > 1)
+// 		while (*argv[2])
+// 			write(1, argv[2]++, 1);
+// 	write(1, "\n", 1);
+// 	return (0);
+// }
+
+
+// ! last_param.c
+
+//  int	main(int argc, char **argv)
+// {
+// 	if (argc > 1)
+// 		while (*argv[argc -1])
+// 			write(1, argv[argc - 1 ]++, 1);
+// 	write(1, "\n", 1);
+// 	return (0);
+// }
+
+
+
+// ! ft_strcpy
+
+char	*ft_strcpy(char *dest, char *src)
+{
+	int	i;
+
+	i = 0;
+	while (src[i])
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }
 
 int main() {
-  char input_string[] = "Abracadabra";
-    int result = count_letter_a(input_string);
-    printf("Count: %d\n", result); 
-
-    return 0;
+  char dest[100];
+  char src[100] = "Hello";
+  ft_strcpy(dest, src);
+  printf("%s\n", dest);
+  return 0;
 }
