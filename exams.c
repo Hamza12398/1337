@@ -808,37 +808,128 @@ int		ft_strlen(char *str) {
 // }
 
 
-//! atoi.c
+// ! atoi.c
 
-int		ft_atoi( char *str)
+// int		ft_atoi( char *str)
+// {
+// 	int i;
+// 	int sign;
+// 	int result;
+
+// 	i = 0;
+// 	sign = 1;
+// 	result = 0;
+// 	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
+// 		i++;
+// 	if (str[i] == '-')
+// 	{
+// 		sign = -1;
+// 		i++;
+// 	}
+// 	else if (str[i] == '+')
+// 		i++;
+// 	while (str[i] != '\0' && str[i] >= '0' && str[i] <= '9')
+// 	{
+// 		result *= 10;
+// 		result += str[i] -  48;  
+// 		i++;
+// 	}
+// 	return (result * sign);
+// }
+
+// int main() {
+//   char str[] = "----8";
+//   ft_atoi(str);
+//   return 0;
+// }
+
+
+//!  ft_strcpy.c 
+
+
+// char ft_strcpy(char *s1, const char *s2) {
+//   int i = 0;
+//   while (src[i]!= '\0') {
+//     s1[i] = s2[i];
+//     i++;
+//   }
+//   s1[i] = '\0';
+//   return (s1);
+// }
+
+// int main() {
+//   char str[] = "hamza";
+//   char dest[] = "";
+//   printf(":: %s", dest);
+//   ft_strcpy(dest, str);
+//   printf(":: %s", dest);
+// }
+
+
+
+//!  ulstr.c
+// int main(int ac, char **av) {
+//   int i = 0;
+//   while (av[1][i]!= '\0') {
+//     if (av[1][i]>= "A" && av[1][i]<="Z")
+//     {
+//         av[1][i] += 32;
+//     }
+//     else if(av[1][i]>= "z" && av[1][i]<="z") {
+//       av[1][i] -= 32;
+//     }
+//       write(1, &av[1][i], 1);
+//       i++;
+//   }
+//   return 0;
+// }
+
+
+// ! inter.c
+int		check_doubles(char *str, char c, int pos)
 {
 	int i;
-	int sign;
-	int result;
 
 	i = 0;
-	sign = 1;
-	result = 0;
-	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
-		i++;
-	if (str[i] == '-')
+	while (i < pos)
 	{
-		sign = -1;
+		if (str[i] == c)
+			return (0);
 		i++;
 	}
-	else if (str[i] == '+')
-		i++;
-	while (str[i] != '\0' && str[i] >= '0' && str[i] <= '9')
+	return (1);
+}
+void	inter(char *str, char *str1)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (str[i] != '\0')
 	{
-		result *= 10;
-		result += str[i] -  48;  
+		j = 0;
+		while (str1[j] != '\0')
+		{
+			if (str[i] == str1[j])
+			{
+				if (check_doubles(str, str[i], i) == 1)
+				{
+					write(1, &str[i], 1);
+					break;
+				}
+			}
+			j++;
+		}
 		i++;
 	}
-	return (result * sign);
+}
+int		main(int ac, char **av)
+{
+
+	if (ac == 3)
+		inter(av[1], av[2]);
+	write(1, "\n", 1);
+	return (0);
 }
 
-int main() {
-  char str[] = "----8";
-  ft_atoi(str);
-  return 0;
-}
+
