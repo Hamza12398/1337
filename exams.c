@@ -646,31 +646,199 @@ int		ft_strlen(char *str) {
 
 
 // ! fizzbuzz.c
-void	ft_write_number(int number)
+// void	ft_write_number(int number)
+// {
+// 	if (number > 9)  // 1 > 9
+//   {
+// 		ft_write_number(number / 10);  
+//   } 
+// 	write(1, &"0123456789"[number % 10], 1); // 1 % 10 = 1
+// }
+
+// int	main(void)
+// {
+// 	int	number;
+
+// 	number = 1;
+// 	while (number <= 100)
+// 	{
+// 		if (number % 3 == 0 && number % 5 == 0)
+// 			write(1, "fizzbuzz", 8);
+// 		else if (number % 3 == 0)
+// 			write(1, "fizz", 4);
+// 		else if (number % 5 == 0)
+// 			write(1, "buzz", 4);
+// 		else
+// 			ft_write_number(number);
+// 		write(1, "\n", 1);
+// 		number++;
+// 	}
+// }
+
+
+// ! LAST WORLD.C
+
+// void	last_word(char *str) {
+//   int  i = 0;
+//   while (str[i]) // * str = hamza ilyass => 12
+//   {
+//     i++;
+//   }
+//   i -= 1; // * 12 - 1 = 11 
+//   while (i > 0) {
+//     if (str[i] == 32 || str[i] == '\t') {
+//       break;
+//     }
+//     i--;
+//   }
+//   i++;
+//   while (str[i]!= '\0' && str[i] != 32 && str[i]!= '\t') {
+//     write(1, &str[i], 1);
+//     i++;
+//   }
+// }
+
+// int main() {
+//   char str[] = "hamza ilyass"; 
+//   last_word(str);
+//   return 0;
+// }
+
+// void rot_13(char *str) {
+//   int i = 0;
+
+//   while(str[i] != '\0') {
+//     if((str[i] >= 'A' && str[i] <= 'M') || (str[i] >= 'a' && str[i] <= 'z'))
+//   {
+//     str[i] += 13;
+//   }
+//   else if((str[i] >= 'N' && str[i] <= 'Z') || (str[i] >= 'n' && str[i] <= 'z')) 
+//   {
+//     str[i] -= 13;
+//   }
+//   write(1, &str[i], 1);
+//   i++;
+// }
+
+//   write(1, "\n", 1);
+// }
+
+// int main() {
+//   char str[] = "z";
+//   rot_13(str);
+//   return 0;
+// }
+
+
+// ! LAST WORD 
+
+// void last_word(char *str) {
+//   int i = 0;
+//   while (str[i]) {
+//     i++;
+//   }
+//   i -= 1;
+//   while (str[i] == 32 || str[i] == '\t')
+//   {
+//     i--;
+//   }
+  
+//   while (i > 0) {
+//     if (str[i] == 32 || str[i] == '\t') {
+//       break;
+//     }
+//     i--;
+//   }
+//   i++;
+//   while (str[i]!= '\0' && str[i]!= 32 && str[i]!= '\t') {
+//     write(1, &str[i], 1);
+//     i++;
+//   }
+// }
+
+// int main(int ac, char **av) {
+//   if (ac == 2)
+//   {
+//     last_word(av[1]);
+//   }
+// }
+
+
+// ! FIRST WORD
+
+// int main(int ac, char **av) {
+//   int i= 0 ;
+//   if (ac == 2) {
+//     while (av[1][i] == 32 || av[1][i] == '\t')
+//   {
+//     i++;
+//   }
+//     while (av[1][i]!= '\0' && av[1][i]!= 32 && av[1][i]!= '\t') {
+//     write(1, &av[1][i], 1);
+//     i++;
+//   }
+//   }
+//   write(1, "\n", 1);
+//   return 0;
+// }
+
+
+// char    *ft_strrev(char *str){
+//   int i = 0;
+//   int j = 0;
+//   char temp;
+//   while(str[i]!= '\0'){
+//     i++;
+//   }
+//   i--;
+//   while(j < i){
+//     temp = str[j];
+//     str[j] = str[i];
+//     str[i] = temp;
+//     j++;
+//     i--;
+//   }
+//   return str;
+// }
+
+// int main() {
+//   char str[] = "hamza";
+//   ft_strrev(str);
+//   return 0;
+// }
+
+
+//! atoi.c
+
+int		ft_atoi( char *str)
 {
-	if (number > 9)  // 1 > 9
-  {
-		ft_write_number(number / 10);  
-  } 
-	write(1, &"0123456789"[number % 10], 1); // 1 % 10 = 1
+	int i;
+	int sign;
+	int result;
+
+	i = 0;
+	sign = 1;
+	result = 0;
+	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
+		i++;
+	if (str[i] == '-')
+	{
+		sign = -1;
+		i++;
+	}
+	else if (str[i] == '+')
+		i++;
+	while (str[i] != '\0' && str[i] >= '0' && str[i] <= '9')
+	{
+		result *= 10;
+		result += str[i] -  48;  
+		i++;
+	}
+	return (result * sign);
 }
 
-int	main(void)
-{
-	int	number;
-
-	number = 1;
-	while (number <= 100)
-	{
-		if (number % 3 == 0 && number % 5 == 0)
-			write(1, "fizzbuzz", 8);
-		else if (number % 3 == 0)
-			write(1, "fizz", 4);
-		else if (number % 5 == 0)
-			write(1, "buzz", 4);
-		else
-			ft_write_number(number);
-		write(1, "\n", 1);
-		number++;
-	}
+int main() {
+  char str[] = "----8";
+  ft_atoi(str);
+  return 0;
 }
