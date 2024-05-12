@@ -1,6 +1,10 @@
 #include <unistd.h>
 #include <stdio.h>
 
+// * project name :interval_space.c
+
+// *create a program that writes three whitespaces between each character in an argument,if the number of arguments is different than 2 the program will return a newline
+
 
 int main(int ac, char *av[]) {
   int i;
