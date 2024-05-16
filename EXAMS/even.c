@@ -10,17 +10,30 @@
 void even( char *str) {
     int i = 0;
 
-    while (str[i] != '\0') {
-        if (i % 2 == 0) {
-            write(1, &str[i], 1);
-        }
-        i++;
+    while (str[i]) 
+		{
+      write(1, &str[i], 1);
+      i = i + 2;
     }
     write(1, "\n", 1);
 }
 
+
+// void even(char *str) {
+//     int index = 0;
+
+//     while (*str != '\0') {
+//         if (index % 2 == 0) {
+//             write(1, str, 1);
+//         }
+//         str++;
+//         index++;
+//     }
+//     write(1, "\n", 1);
+// }
+
 int main() {
-    char *text = "Hello, World!";
+    char *text = "hamzacherkaoui";
     even(text);
 
     return 0;
