@@ -6,7 +6,7 @@
 
 // *create a program that only writes the character if the index its not on in is a multiple of 2.
 
-void even(char *str) 
+void odd(char *str) 
 {
     int index = 0;
 
@@ -25,7 +25,7 @@ void even(char *str)
 int main() 
 {
     char *text = "hamzacherkaoui";
-    even(text);
+    odd(text);
 
     return 0;
 }
