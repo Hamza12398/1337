@@ -71,51 +71,51 @@ int main()
 }
 
 
-// void ft_putchar(char c) {
-//     write(1, &c, 1);
-// }
+void ft_putchar(char c) {
+    write(1, &c, 1);
+}
 
-// void ft_putchar(char c);
+void ft_putchar(char c);
 
-// void print_line(int x, char start, char middle, char end) {
-//     int i;
+void print_line(int x, char start, char middle, char end) {
+    int i;
 
-//     if (x > 0) {
-//         ft_putchar(start);
-//     }
-//     i = 1;
-//     while (i < x - 1) {
-//         ft_putchar(middle);
-//         i++;
-//     }
-//     if (x > 1) {
-//         ft_putchar(end);
-//     }
-//     ft_putchar('\n');
-// }
+    if (x > 0) {
+        ft_putchar(start);
+    }
+    i = 1;
+    while (i < x - 1) {
+        ft_putchar(middle);
+        i++;
+    }
+    if (x > 1) {
+        ft_putchar(end);
+    }
+    ft_putchar('\n');
+}
 
-// void rush(int x, int y) {
-//     int i;
+void rush(int x, int y) {
+    int i;
 
-//     if (x <= 0 || y <= 0) {
-//         return;
-//     }
+    if (x <= 0 || y <= 0) {
+        return;
+    }
 
-//     print_line(x, 'o', '-', 'o');
-//     i = 1;
-//     while (i < y - 1) {
-//         print_line(x, '|', ' ', '|');
-//         i++;
-//     }
-//     if (y > 1) {
-//         print_line(x, 'o', '-', 'o');
-//     }
-// }
+    print_line(x, 'o', '-', 'o');
+    i = 1;
+    while (i < y - 1) {
+        print_line(x, '|', ' ', '|');
+        i++;
+    }
+    if (y > 1) {
+        print_line(x, 'o', '-', 'o');
+    }
+}
 
 
-// void rush(int x, int y);
+void rush(int x, int y);
 
-// int main() {
-//     rush(4, 4);
-//     return 0;
-// }
+int main() {
+    rush(4, 4);
+    return 0;
+}
