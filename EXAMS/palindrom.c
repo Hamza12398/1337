@@ -1,13 +1,15 @@
 #include <stdio.h>
 #include <string.h>
 
-int isPalindrome(char *s) {
-    int length = strlen(s);
+int isPalindrome(char *s) 
+{
     int i = 0;
-    int j = length - 1;
+    int j = strlen(s) - 1 ;
 
-    while (i < j) {
-        if (s[i] != s[j]) {
+    while (i <= j)
+    {
+        if (s[i] != s[j])
+        {
             return 0;
         }
         i++;
@@ -16,12 +18,9 @@ int isPalindrome(char *s) {
     return 1;
 }
 
-int main() {
+int main() 
+{
     char str1[] = "radar";
-    char str2[] = "hamza";
-    
     printf("%d\n", isPalindrome(str1));
-    printf("%d\n", isPalindrome(str2));
-    
     return 0;
 }

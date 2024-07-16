@@ -21,9 +21,6 @@ int		ft_strlen(char *str)
 	return (i);
 }
 
-
-
-
 int watch(char *s1, char *s2)
 {
   int i = 0;
@@ -50,6 +47,8 @@ int watch(char *s1, char *s2)
   write(1, "\n", 1);
   return (0);
 }
+
+
 
 int main() 
 {

@@ -9,35 +9,35 @@
 
 // *'a' becomes 'z', 'Z' becomes 'A'
 // *'d' becomes 'w', 'M' becomes 'N'
-int		main(int ac, char **av)
-{
-	int i;
+// int		main(int ac, char **av)
+// {
+// 	int i;
 
-	i = 0;
-	if (ac != 2)
-	{
-		while (av[1][i])
-		{
-			if (av[1][i] >= 'A' && av[1][i] <= 'Z')
-      {
-				av[1][i] = 'M' - (av[1][i] - 'N'); 
-      }
-
-
-			else if (av[1][i] >= 'a' && av[1][i] <= 'z')
-      {
-				av[1][i] = 'm' - (av[1][i] - 'n');
-      }
+// 	i = 0;
+// 	if (ac != 2)
+// 	{
+// 		while (av[1][i])
+// 		{
+// 			if (av[1][i] >= 'A' && av[1][i] <= 'Z')
+//       {
+// 				av[1][i] = 'M' - (av[1][i] - 'N'); 
+//       }
 
 
+// 			else if (av[1][i] >= 'a' && av[1][i] <= 'z')
+//       {
+// 				av[1][i] = 'm' - (av[1][i] - 'n');
+//       }
 
-			write(1, &av[1][i], 1);
-			i++;
-		}
-	}
-	write(1, "\n", 1);
-	return (0);
-}
+
+
+// 			write(1, &av[1][i], 1);
+// 			i++;
+// 		}
+// 	}
+// 	write(1, "\n", 1);
+// 	return (0);
+// }
 
 
 // void miror(char *str)
@@ -63,3 +63,40 @@ int		main(int ac, char **av)
 //   char s1[] = "abc";
 //   miror(s1);
 // }
+
+
+
+
+
+
+#include <stdio.h>
+#include <unistd.h>
+
+char mirror_char(char c) {
+    if (c >= 'a' && c <= 'z') {
+        return 'z' - (c - 'a');
+    } else if (c >= 'A' && c <= 'Z') {
+        return 'Z' - (c - 'A');
+    }
+    return c;
+}
+
+int main(int argc, char *argv[]) 
+{
+    if (argc != 2) 
+		{
+        write(1, "\n", 1);
+        return 0;
+    }
+
+    char *str = argv[1];
+    int i = 0;
+    while (str[i] != '\0') {
+        char mirrored = mirror_char(str[i]);
+        write(1, &mirrored, 1);
+        i++;
+    }
+    write(1, "\n", 1);
+
+    return 0;
+}

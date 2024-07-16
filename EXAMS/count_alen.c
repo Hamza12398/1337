@@ -11,7 +11,7 @@ int count_alen(char* str) {
     while (*str) {
         if (*str == 'a') 
         {
-          break;
+            break;
         }
         length++;
         str++;
@@ -24,6 +24,5 @@ int main() {
     char str[] = "hello hamza";
     int len = count_alen(str);
     printf("Length until 'a': %d\n", len);
-
     return 0;
 }
